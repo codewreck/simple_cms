@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
   def up
     create_table :users do |t|
     	t.column "first_name", :string, :limit => 25 
-    	# t.string "first_name" 
     	t.column "last_name", :string, :limit => 50
     	t.column "email", :string, :default => '', :null => false	
     	t.string "password", :limit => 40
