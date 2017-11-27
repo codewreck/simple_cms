@@ -24,9 +24,18 @@ class SubjectsController < ApplicationController
   end
 
   def edit
+    @subject = Subject.find_by_id(params[:id])
   end
 
   def update
+    @subject = Subject.find_by_id(params[:id])
+
+    
+    if @subject.update_attributes(subject_params) 
+      redirect_to(subject_path(@subject))
+    else
+      render('edit')
+    end
   end
 
   def delete
