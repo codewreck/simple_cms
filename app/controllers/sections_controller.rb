@@ -1,4 +1,8 @@
 class SectionsController < ApplicationController
+
+
+  layout 'admin'
+
   def index
     @sections = Section.sorted
   end
